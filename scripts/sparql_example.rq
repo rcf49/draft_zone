@@ -1,0 +1,7 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX example: <http://example.org/>
+SELECT ?o_label
+WHERE {
+    ?s example:property ?o .
+    ?o rdfs:label ?o_label .
+}

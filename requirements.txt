@@ -1,0 +1,10 @@
+# Dataframe
+pandas
+numpy
+# Ontology
+rdflib
+# Excel file formatting
+openpyxl
+# NLP
+spacy
+scikit-learn
