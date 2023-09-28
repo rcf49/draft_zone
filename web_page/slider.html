@@ -1,0 +1,59 @@
+<style>
+    /*
+        Center text in table.
+    */
+    td {
+        text-align: center;
+    }
+
+    /* 
+        Set slider dimensions.
+        Hide overflow of box-shadow.
+    */
+    #test_slider {
+        width: 400px;
+        height: 10px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    /*
+        The box-shadow sets the colors on each side of the slider.
+    */
+    #test_slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background: #404040;
+        border-radius: 10px;
+        box-shadow: -210px 0px 0px 200px #dc77f5,
+                    210px 0px 0px 200px #3edbb3;
+        cursor: pointer;
+    }
+</style>
+
+<h1>Slider Example</h1>
+
+<!-- Table used to format the slider with text on each side -->
+<table>
+    <tr>
+        <td>Left Value</td>
+        <td rowspan="2">
+            <!-- Range of 0-100, each step is 1, and default to 50 -->
+            <input id="test_slider" type="range" min="0" max="100" step="1" value="50">
+        </td>
+        <td>Right Value</td>
+    <!-- Set default values to 50% -->
+    </tr>
+        <td id="left_value">50%</td>
+        <td id="right_value">50%</td>
+    <tr>
+
+    </tr>
+</table>
+
+<script>
+    // On input of the slider, update the text values to reflect the current selection as a percentage
+    document.getElementById("test_slider").oninput = function () {
+        document.getElementById("left_value").innerHTML = this.value + "%";
+        document.getElementById("right_value").innerHTML = this.value + "%";
+    }
+</script>
