@@ -42,8 +42,14 @@ jobs:
       run: |
           python scripts/test.py
 
-    - uses: actions/checkout@v4
-    - name: Push and commit changes to draft_zone reposiotry
+    - uses: actions/checkout@v3
+
+    - name: Check for modified files
+      id: git-check
+      run: echo ::set-output name=modified::$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)
+        
+    - name: Push and commit changes to draft_zone reposiotry, if there are modified files
+      if: steps.git-check.outputs.modified == 'true'
       run: |
           date > generated.txt
           git config user.name github-actions
