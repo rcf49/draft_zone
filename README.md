@@ -1,6 +1,8 @@
 # draft_zone
 
-Sandbox of code snippets for future reference
+Sandbox of code snippets for future reference.
+
+This also includes a test web page to play around with HTML: <https://rcf49.github.io/draft_zone/>
 
 ## Python Virtual Environment
 
