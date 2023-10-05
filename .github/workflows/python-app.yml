@@ -7,6 +7,9 @@ on:
   push:
     branches: [ "main" ]
 
+permissions:
+  contents: write
+
 jobs:
   build:
 
@@ -37,7 +40,6 @@ jobs:
 
     - name: Execute Python script
       run: |
-          python scripts/test.py
           date > generated.txt
 
     - name: Check for modified files
