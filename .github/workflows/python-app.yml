@@ -44,7 +44,7 @@ jobs:
 
     - name: Check for modified files
       id: git-check
-      run: echo 'modified=$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)' >> $GITHUB_OUTPUT
+      run: echo 'modified=true' >> $GITHUB_OUTPUT
         
     - name: Push and commit changes to draft_zone reposiotry, if there are modified files
       if: steps.git-check.outputs.modified == 'true'
