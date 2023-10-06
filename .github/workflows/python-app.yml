@@ -7,9 +7,6 @@ on:
   push:
     branches: [ "main" ]
 
-permissions:
-  contents: write
-
 jobs:
   build:
 
@@ -40,11 +37,12 @@ jobs:
 
     - name: Execute Python script
       run: |
+          python scripts/test.py
           date > generated.txt
 
     - name: Check for modified files
       id: git-check
-      run: echo 'modified=true' >> $GITHUB_OUTPUT
+      run: echo "modified=`if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi`" >> $GITHUB_OUTPUT
         
     - name: Push and commit changes to draft_zone reposiotry, if there are modified files
       if: steps.git-check.outputs.modified == 'true'
