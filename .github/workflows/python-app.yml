@@ -47,15 +47,15 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     # Test Python files in entire repository
-    - name: Test with pytest
-      run: |
-        pytest .
+    #- name: Test with pytest
+    #  run: |
+    # Will need to specify folder with test files: https://docs.pytest.org/
+    #    pytest .
     
     # Execute the following scripts in order
     - name: Execute Python script
       run: |
           python scripts/test.py
-    #      date > generated.txt
 
     # Check if any files have been modified with this workflow
     - name: Check for modified files
