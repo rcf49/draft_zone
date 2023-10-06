@@ -70,4 +70,4 @@ jobs:
           git config user.email github-actions@github.com
           git add .
           git commit -m "Modified files by GitHub Actions `date +\"%Y_%m_%d\"`"
-          git push --tags
+          git push
