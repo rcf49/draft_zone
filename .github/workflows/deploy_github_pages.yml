@@ -65,7 +65,7 @@ jobs:
     # Execute the following scripts in order
     - name: Execute Python script
       run: |
-          python scripts/test.py
+          echo "Run Python file here"
 
     # Check if any files have been modified with this workflow
     - name: Check for modified files
