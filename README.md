@@ -2,7 +2,8 @@
 
 Sandbox of code snippets for future reference.
 
-This also includes a test web page to play around with HTML: <https://rcf49.github.io/draft_zone/>
+This also includes a test web page to play around with HTML: 
+<a href="https://rcf49.github.io/draft_zone/" target="_blank">https://rcf49.github.io/draft_zone/</a>
 
 ## Python Virtual Environment
 
