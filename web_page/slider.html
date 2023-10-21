@@ -68,7 +68,7 @@
     // On input of the slider, update the text values to reflect the current selection as a percentage
     document.getElementById("test_slider").oninput = function () {
         document.getElementById("left_value").innerHTML = this.value + "%";
-        document.getElementById("right_value").innerHTML = this.value + "%";
+        document.getElementById("right_value").innerHTML = (100- this.value) + "%";
     }
 
 </script>
