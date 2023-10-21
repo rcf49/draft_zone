@@ -34,13 +34,15 @@
 </style>
 
 <ul id="navbar_list">
-    <li><a href="/draft_zone/index.html">Home</a></li>
-    <li><a href="/draft_zone/web_page/slider.html">Slider</a></li>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/web_page/slider.html">Slider</a></li>
 </ul>
 
 <script>
     // Set which page is active for navbar
     $(document).ready(function() {
+        // Get current URL
+        var current_url = window.location.href;
         // Get list of links
         var navbar_list = document.getElementById('navbar_list');
         // Get first link
@@ -50,8 +52,16 @@
             if (link.tagName === 'LI') {
                 // Get the href
                 var href = link.querySelector('a');
+
+                // First, format href depending on if this is locally hosted or hosted on GitHub
+                // If current page url contains github.io, add repo name to link
+                if(current_url.indexOf("github.io") != -1){
+                    link.querySelector('a').href = "/draft_zone" + href;
+                } 
+
+                // Then format which link is the active page
                 // If href is in the current page url, set it to active
-                if(window.location.href.indexOf(href) != -1){
+                if(current_url.indexOf(href) != -1){
                     link.classList.add('active');
                 // If href is not the current page, remove the class
                 } else {
