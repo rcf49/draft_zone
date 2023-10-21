@@ -1,13 +1,27 @@
-<h1>Draft_Zone Homepage</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
 
-<h2>Hosted on GitHub by <a href="https://github.com/rcf49" target="_blank">rcf49</a></h2>
+<body>
+    <div id="navbar"></div>
 
-<p>Hello! This is a demo space I created to test out and document various HTML items for my future reference.</p>
+    <h1>Draft_Zone Homepage</h1>
 
-<p>Source code from <a href="https://github.com/rcf49/draft_zone" target="_blank">here</a>.</p>
+    <h2>Hosted on GitHub by <a href="https://github.com/rcf49" target="_blank">rcf49</a></h2>
 
-<h3>Other Pages</h3>
+    <p>Hello! This is a demo space I created to test out and document various HTML items for my future reference.</p>
 
-<table>
-    <tr><a href="./web_page/slider.html">Test Slider</a></tr>
-</table>
+    <p>Source code from <a href="https://github.com/rcf49/draft_zone" target="_blank">here</a>.</p>
+
+</body>
+
+<script>
+    // Load navbar
+    $(document).ready(function() {
+        $('#navbar').load('/web_page/navbar.html');
+    });
+
+</script>
+</html>

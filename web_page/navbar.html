@@ -1,0 +1,62 @@
+<style>
+    /* Style navbar */
+    #navbar_list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #d6d6d6;
+    }
+    /* Style li items in the navbar to be inline */
+    #navbar_list li {
+        display: inline;
+    }
+    /* Sryle links in the navbar*/
+    #navbar_list li a {
+        color: #000000;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    /* Change the link color on hover */
+    #navbar_list li a:hover {
+        background-color: #b3e3ff;
+    }
+    /* Highlight the active page */
+    .active {
+        background-color: #14d58e;
+    }
+
+</style>
+
+<ul id="navbar_list">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/web_page/slider.html">Slider</a></li>
+</ul>
+
+<script>
+    // Set which page is active for navbar
+    $(document).ready(function() {
+        // Get list of links
+        var navbar_list = document.getElementById('navbar_list');
+        // Get first link
+        var link = navbar_list.firstChild;
+        while (link) {
+            // For each li object
+            if (link.tagName === 'LI') {
+                // Get the href
+                var href = link.querySelector('a');
+                // If href is in the current page url, set it to active
+                if(window.location.href.indexOf(href) != -1){
+                    link.classList.add('active');
+                // If href is not the current page, remove the class
+                } else {
+                    link.classList.remove('active');
+                }
+            }
+            // Move to the next link
+            link = link.nextSibling;
+        }
+    });
+
+</script>
