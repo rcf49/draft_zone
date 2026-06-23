@@ -8,3 +8,5 @@ openpyxl
 # NLP
 spacy
 scikit-learn
+# Pretty print
+pprint
